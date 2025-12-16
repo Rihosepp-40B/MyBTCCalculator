@@ -60,11 +60,12 @@
             // 
             currencySelector.AutoCompleteCustomSource.AddRange(new string[] { "EUR", "USD" });
             currencySelector.FormattingEnabled = true;
-            currencySelector.Items.AddRange(new object[] { "USD", "EUR" });
+            currencySelector.Items.AddRange(new object[] { "USD", "EUR", "GBP", "EEK" });
             currencySelector.Location = new Point(24, 96);
             currencySelector.Name = "currencySelector";
             currencySelector.Size = new Size(175, 23);
             currencySelector.TabIndex = 2;
+            currencySelector.Text = "USD";
             // 
             // toCurrencyLable
             // 
@@ -113,7 +114,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaptionText;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
-            ClientSize = new Size(503, 450);
+            BackgroundImageLayout = ImageLayout.Zoom;
+            ClientSize = new Size(305, 450);
             Controls.Add(CalcResultLable);
             Controls.Add(CalcResult);
             Controls.Add(calculateBitcoinPrice);
@@ -121,6 +123,7 @@
             Controls.Add(currencySelector);
             Controls.Add(BTCLable);
             Controls.Add(bitcoinAmountInput);
+            DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "Form1";
             Text = "Form1";
